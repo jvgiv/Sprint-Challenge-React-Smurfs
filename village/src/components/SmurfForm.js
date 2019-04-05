@@ -26,28 +26,49 @@ class SmurfForm extends Component {
   };
 
   render() {
+    const inputStyle = {
+      width: '50%',
+      borderRadius: '6px',
+      textAlign: 'center',
+      margin: '8px auto',
+      border: '1px solid gray',
+      boxShadow: '1px 1px 1px #D2D2D2',
+  }
+
+  const btnStyle = {
+    width: '35%',
+    height: '30px',
+    margin: '8px auto',
+    borderRadius: '6px',
+    boxShadow: '1px 1px 1px #D2D2D2'
+}
+
     return (
       <div className="SmurfForm">
         <form onSubmit={this.addSmurf}>
           <input
+            style={inputStyle}
             onChange={this.handleInputChange}
             placeholder="name"
             value={this.state.name}
             name="name"
           />
           <input
+            style={inputStyle}
             onChange={this.handleInputChange}
             placeholder="age"
             value={this.state.age}
             name="age"
           />
           <input
+            style={inputStyle}
             onChange={this.handleInputChange}
             placeholder="height"
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <br/>
+          <button style={btnStyle} onClick={this.addSmurf} type="submit">Add to the village</button>
         </form>
       </div>
     );
