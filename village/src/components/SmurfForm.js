@@ -10,9 +10,16 @@ class SmurfForm extends Component {
     };
   }
 
+
+
   addSmurf = event => {
     event.preventDefault();
-    // add code to create the smurf using the api
+    const smurfs = {
+      name: this.state.name,
+      age: this.state.age,
+      height: this.state.height
+    }
+    this.props.addANewSmurf(smurfs);
 
     this.setState({
       name: '',
@@ -33,6 +40,7 @@ class SmurfForm extends Component {
       margin: '8px auto',
       border: '1px solid gray',
       boxShadow: '1px 1px 1px #D2D2D2',
+      height: '25px'
   }
 
   const btnStyle = {
@@ -49,21 +57,21 @@ class SmurfForm extends Component {
           <input
             style={inputStyle}
             onChange={this.handleInputChange}
-            placeholder="name"
+            placeholder="Name"
             value={this.state.name}
             name="name"
           />
           <input
             style={inputStyle}
             onChange={this.handleInputChange}
-            placeholder="age"
+            placeholder="Age"
             value={this.state.age}
             name="age"
           />
           <input
             style={inputStyle}
             onChange={this.handleInputChange}
-            placeholder="height"
+            placeholder="Height"
             value={this.state.height}
             name="height"
           />
